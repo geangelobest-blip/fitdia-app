@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101827"><meta name="description" content="Seu treino diário, descanso, mobilidade, cardio e progresso. Funciona também offline após a primeira visita.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png"><link rel="stylesheet" href="styles.css">
+<title>FitDia — Treino diário</title>
+</head>
+<body>
+<header class="topbar"><div class="brand"><div class="brand-icon">FD</div><div><strong>FitDia</strong><small>Seu treino. Seu ritmo.</small></div></div><button id="installBtn" class="button button-light hidden">＋ Instalar app</button></header>
+<main>
+<section class="hero"><div><p class="eyebrow">TREINO INTELIGENTE</p><h1>Hoje é dia de<br><span>ficar mais forte.</span></h1><p class="muted hero-copy">Treino guiado, descanso controlado e evolução no seu ritmo.</p></div><div class="hero-mark" aria-hidden="true">✦</div></section>
+<section class="profile-switch"><label for="profile">Sua ficha</label><select id="profile"><option value="female">Feminina · ABCD</option><option value="male">Masculina · ABCDE</option></select><button id="todayBtn" class="button button-outline">Treino de hoje</button></section>
+<section class="week" id="week" aria-label="Dias de treino"></section>
+<section class="summary-card"><div><p class="eyebrow">SESSÃO SELECIONADA</p><h2 id="workoutTitle">Carregando treino…</h2><p id="workoutSubtitle" class="muted"></p></div><div class="progress-ring"><strong id="progressPercent">0%</strong><small>feito</small></div></section>
+<section class="section"><div class="section-heading"><div><p class="eyebrow">01 · PREPARAÇÃO</p><h2>Mobilidade e aquecimento</h2></div><span class="tag tag-green">5–8 min</span></div><p class="muted">Movimentos suaves antes das séries. Não force amplitude nem continue se sentir dor.</p><div id="mobilityList" class="exercise-list"></div></section>
+<section class="section"><div class="section-heading"><div><p class="eyebrow">02 · FORÇA</p><h2>Exercícios do dia</h2></div><span id="exerciseCount" class="tag">0 exercícios</span></div><div id="exerciseList" class="exercise-list"></div><button id="finishSession" class="button button-primary" style="width:100%;margin-top:14px">✓ Marcar sessão como concluída</button></section>
+<section class="section cardio-card"><div class="section-heading"><div><p class="eyebrow">03 · FINALIZAÇÃO</p><h2>Cardio pós-treino</h2></div><span class="tag">Opcional</span></div><div class="choice-row"><button class="choice active" data-cardio="esteira">🚶 Esteira</button><button class="choice" data-cardio="bicicleta">🚲 Bicicleta</button></div><div class="duration-row"><label for="cardioMinutes">Duração</label><strong><span id="minutesLabel">20</span> min</strong></div><input id="cardioMinutes" type="range" min="10" max="30" step="5" value="20"><div class="range-labels"><span>10 min</span><span>20 min</span><span>30 min</span></div><p id="cardioDescription" class="muted">Caminhada em ritmo confortável a moderado. Você deve conseguir conversar.</p><a id="cardioVideo" class="text-link" target="_blank" rel="noopener">Ver orientação de uso ↗</a></section>
+<section class="section timer-card"><div><p class="eyebrow">CRONÔMETRO</p><h2>Descanso entre séries</h2><p class="muted">Escolha o intervalo e inicie quando terminar uma série.</p></div><div class="timer-display" id="timerDisplay">01:30</div><div class="timer-controls"><button id="timerStart" class="button button-primary">▶ Iniciar</button><button id="timerReset" class="button button-outline">Reiniciar</button><select id="timerPreset" aria-label="Tempo de descanso"><option value="45">45 segundos</option><option value="60">60 segundos</option><option value="75">75 segundos</option><option value="90" selected>90 segundos</option><option value="120">120 segundos</option><option value="150">150 segundos</option></select></div></section>
+<section class="section history-card"><div class="section-heading"><div><p class="eyebrow">CONSISTÊNCIA</p><h2>Seu progresso</h2></div><button id="resetProgress" class="text-button">Limpar histórico</button></div><div class="stats"><div><strong id="sessionsDone">0</strong><span>sessões marcadas</span></div><div><strong id="exercisesDone">0</strong><span>exercícios concluídos</span></div><div><strong id="weightEntries">0</strong><span>cargas registradas</span></div></div><p class="muted small">Os dados ficam salvos neste dispositivo e navegador. Não há conta ou sincronização em nuvem nesta versão.</p></section>
+<section class="section safety"><strong>Treine com segurança</strong><p>Comece com cargas controláveis, mantenha a técnica e adapte os exercícios ao seu nível. Interrompa se sentir dor aguda, tontura ou falta de ar incomum. Este plano é uma referência geral, não substitui avaliação individual.</p></section>
+<footer><span>FitDia · versão inicial</span><span>Feito para treinar melhor</span></footer>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body></html>
